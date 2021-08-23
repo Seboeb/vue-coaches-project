@@ -69,5 +69,4 @@ header ul {
 li {
   margin: 0 0.5rem;
 }
-
 </style>
