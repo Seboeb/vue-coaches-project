@@ -1,7 +1,7 @@
 <template>
   <div>
     <base-dialog :show="!!error" title="An error occured!" @close="handleError">
-      <p>{{ error }}/p></p>
+      <p>{{ error }}</p>
     </base-dialog>
     <section>
       <base-card>
@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import RequestItem from "../../components/requests/RequestItem.vue";
+import RequestItem from '../../components/requests/RequestItem.vue';
 
 export default {
   components: { RequestItem },
@@ -36,10 +36,10 @@ export default {
   },
   computed: {
     receivedRequests() {
-      return this.$store.getters["requests/requests"];
+      return this.$store.getters['requests/requests'];
     },
     hasRequests() {
-      return this.$store.getters["requests/hasRequests"];
+      return this.$store.getters['requests/hasRequests'];
     },
   },
   created() {
@@ -49,9 +49,9 @@ export default {
     async loadRequests() {
       this.isLoading = true;
       try {
-        await this.$store.dispatch("requests/fetchRequests");
+        await this.$store.dispatch('requests/fetchRequests');
       } catch (error) {
-        this.error = error.message || "Something failed!";
+        this.error = error.message || 'Something failed!';
       }
       this.isLoading = false;
     },
