@@ -26,7 +26,7 @@
 
 <script>
 export default {
-  props: ["id"],
+  props: ['id'],
   data() {
     return {
       selectedCoach: null,
@@ -34,10 +34,10 @@ export default {
   },
   computed: {
     fullName() {
-      return this.selectedCoach.firstName + " " + this.selectedCoach.lastName;
+      return this.selectedCoach.firstName + ' ' + this.selectedCoach.lastName;
     },
     contactLink() {
-      return this.$route.path + "/contact";
+      return this.$route.path + '/contact';
     },
     areas() {
       return this.selectedCoach.areas;
@@ -50,7 +50,7 @@ export default {
     },
   },
   created() {
-    this.selectedCoach = this.$store.getters["coaches/coaches"].find((coach) => coach.id == this.id);
+    this.selectedCoach = this.$store.getters['coaches/coaches'].find(coach => coach.id == this.id);
   },
 };
 </script>
